@@ -71,7 +71,7 @@ public class AYPopupPickerView: UIView {
         doneButton.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -16).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         doneButton.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
-        doneButton.set""("Done", for: .normal)
+        doneButton.setTitle("Done", for: .normal)
         doneButton.addTarget(self, action: #selector(done), for: .touchUpInside)
         
         cancelButton = UIButton(type: .system)
