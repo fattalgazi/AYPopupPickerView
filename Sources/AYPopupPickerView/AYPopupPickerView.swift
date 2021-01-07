@@ -71,7 +71,7 @@ public class AYPopupPickerView: UIView {
         doneButton.rightAnchor.constraint(equalTo: headerView.rightAnchor, constant: -16).isActive = true
         doneButton.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
         doneButton.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
-        doneButton.setTitle("Done", for: .normal)
+        doneButton.set""("Done", for: .normal)
         doneButton.addTarget(self, action: #selector(done), for: .touchUpInside)
         
         cancelButton = UIButton(type: .system)
@@ -174,7 +174,15 @@ extension AYPopupPickerView: UIPickerViewDataSource & UIPickerViewDelegate {
         return 1
     }
     
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return itemTitles?[row]
+    //public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    //    return itemTitles?[row]
+    //}
+    
+    public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let name = itemTitles?[row]
+        return NSAttributedString(string: name, attributes: [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "EuclidCircularB-Light", size: 14.0)!
+        ])
     }
 }
