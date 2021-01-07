@@ -179,7 +179,7 @@ extension AYPopupPickerView: UIPickerViewDataSource & UIPickerViewDelegate {
     //}
     
     public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let name = itemTitles?[row]
+        let name = itemTitles?[row] ?? ""
         return NSAttributedString(string: name, attributes: [
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "EuclidCircularB-Light", size: 14.0)!
